@@ -17,6 +17,11 @@ public enum TextureFormat
 	R8G8B8A8,
 
 	/// <summary>
+	/// 16 bit four channel texture, each component stored in unsigned normalized format
+	/// </summary>
+	R16G16B16A16,
+
+	/// <summary>
 	/// 8 bit single channel texture, stored in an unsigned normalized format
 	/// </summary>
 	R8,
@@ -56,6 +61,8 @@ public enum TextureFormat
 	/// </summary>
 	Depth32,
 
+
+
 	/// <summary>
 	/// Shorthand for R8G8B8A8
 	/// </summary>
@@ -71,6 +78,7 @@ public static class TextureFormatExt
 		=> format switch
 		{
 			TextureFormat.R8G8B8A8 => 4,
+			TextureFormat.R16G16B16A16 => 8,
 			TextureFormat.R8 => 1,
 			TextureFormat.R8G8 => 2,
 			TextureFormat.Depth24Stencil8 => 4,
@@ -88,6 +96,7 @@ public static class TextureFormatExt
 		=> format switch
 		{
 			TextureFormat.R8G8B8A8 => true,
+			TextureFormat.R16G16B16A16 => true,
 			TextureFormat.R8 => true,
 			TextureFormat.R8G8 => true,
 			TextureFormat.Depth24Stencil8 => false,
